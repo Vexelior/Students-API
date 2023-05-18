@@ -3,7 +3,6 @@ package com.example.demo.student;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 import java.time.LocalDate;
 import java.time.Month;

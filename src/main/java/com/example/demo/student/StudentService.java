@@ -29,6 +29,15 @@ public class StudentService {
         if (studentOptional.isPresent()) {
             throw new IllegalStateException("The email '" + student.getEmail() + "' is already taken.");
         }
+
+        if (student.getName() == null || student.getName().length() == 0) {
+            throw new IllegalStateException("The name cannot be null or empty.");
+        }
+
+        if (student.getEmail() == null || student.getEmail().length() == 0) {
+            throw new IllegalStateException("The email cannot be null or empty.");
+        }
+
         studentRepository.save(student);
     }
 
