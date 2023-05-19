@@ -15,17 +15,15 @@ const Home = () => {
         setstudents(data);
         setTimeout(() => {
           setLoading(false);
-        } , 500);
+        } , 200);
       })
   }, []);
 
-  // Format the date of birth to be more readable
   if (students != null) {
     students.forEach(student => {
       let date = new Date(student.dob);
       student.dob = date.toLocaleDateString();
 
-      // Order the students by id
       students.sort((a, b) => (a.id > b.id) ? 1 : -1);
     });
   }
@@ -45,7 +43,7 @@ const Home = () => {
   return (
     <div className="App">
       <div className="students-table">
-        <h2 className='text-center'>Students</h2>
+        <h2 className='text-center mt-3 mb-3'>Students List</h2>
         <table className="table table-striped" id='studentTable'>
           <thead>
             <tr>

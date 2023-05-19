@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../assets/images/logo.png'
 import './Nav.css';
 
 const Nav = () => {
@@ -53,7 +54,7 @@ const Nav = () => {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a className="navbar-brand" href="/">Student API</a>
+            <img src={logo} alt='logo' style={{width: '60px', height: '60px', marginRight: '20px'}} />
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -67,8 +68,8 @@ const Nav = () => {
                     </li>
                 </ul>
                 <div className="form-inline my-2 my-lg-0">
-                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id='search' />
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="button" onClick={searchStudent}>Search</button>
+                    <input className="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search" id='search' />
+                        <button className="btn btn-primary my-2 my-sm-0" type="button" onClick={searchStudent}>Search</button>
                 </div>
             </div>
         </nav>

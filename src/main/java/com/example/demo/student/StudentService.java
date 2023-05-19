@@ -51,7 +51,7 @@ public class StudentService {
         studentRepository.deleteById(studentId);
     }
 
-    @Transactional // Save the updated student to the database.
+    @Transactional
     public Student updateStudent(Long studentId, String name, String email, LocalDate dob) {
         Student student = getStudentById(studentId);
 
