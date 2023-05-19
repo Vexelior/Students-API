@@ -15,7 +15,7 @@ public class StudentConfig {
         return args -> {
             ArrayList<Student> students = new ArrayList<Student>();
 
-            for (int i = 1; i < 100; i++) {
+            for (int i = 1; i < 101; i++) {
                 Student student = new Student(
                         "Student " + i,
                         LocalDate.of(2000, Month.JANUARY, 1),
