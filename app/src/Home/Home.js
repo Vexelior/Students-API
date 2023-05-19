@@ -61,8 +61,8 @@ const Home = () => {
                 <td>{student.email}</td>
                 <td>{student.dob}</td>
                 <td>
-                  <a href={`/student/${student.id}`} className='btn btn-primary' id='crudButton'><i className="fa fa-eye"></i></a>
-                  <a href={`/student/${student.id}`} className='btn btn-warning ml-2' id='crudButton'><i className="fa fa-edit"></i></a>
+                  <a href={`/student/view/${student.id}`} className='btn btn-primary' id='crudButton'><i className="fa fa-eye"></i></a>
+                  <a href={`/student/update/${student.id}`} className='btn btn-warning ml-2' id='crudButton'><i className="fa fa-edit"></i></a>
                   <a href={`/student/delete/${student.id}`} className='btn btn-danger ml-2' id='crudButton'><i className="fa fa-trash"></i></a>
                 </td>
               </tr>

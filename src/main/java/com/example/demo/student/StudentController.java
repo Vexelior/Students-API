@@ -3,6 +3,7 @@ package com.example.demo.student;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -33,9 +34,26 @@ public class StudentController {
     public void deleteStudent(@PathVariable("studentId") Long studentId) { studentService.deleteStudent(studentId); }
 
     @PutMapping(path = "{studentId}")
-    public void updateStudent(
-        @PathVariable("studentId") Long studentId,
-        @RequestParam(required = false) String name,
-        @RequestParam(required = false) String email
-    ) { studentService.updateStudent(studentId, name, email); }
+    public ResponseEntity<Student> updateStudent(@PathVariable("studentId") Long studentId,
+                                                 @RequestParam(required = false) String name,
+                                                 @RequestParam(required = false) String email,
+                                                 @RequestParam(required = false) LocalDate dob) {
+        try {
+            studentService.updateStudent(studentId, name, email, dob);
+            return ResponseEntity.ok().build();
+        } catch (IllegalStateException e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+
+    @GetMapping(path = "{studentId}")
+    public ResponseEntity<Student> getStudentById(@PathVariable("studentId") Long studentId) {
+        try {
+            Student student = studentService.getStudentById(studentId);
+            return ResponseEntity.ok(student);
+        } catch (IllegalStateException e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
 }

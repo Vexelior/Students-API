@@ -5,7 +5,7 @@ This is a simple Spring Boot application that demonstrates how to use Spring Boo
 
 ## Technologies
 * Spring Boot 3.0.6
-* Java 17
+* Java 20
 * PostgreSQL 15.3
 * Maven 3.8.3
 

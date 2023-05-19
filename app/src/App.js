@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './Navbar/Nav';
 import Home from './Home/Home';
 import AddStudent from './Students/Add/StudentAdd';
+import UpdateStudent from './Students/Update/StudentUpdate';
 
 const App = () => {
   return (
@@ -10,8 +11,9 @@ const App = () => {
     <Nav/>
     <Router>
       <Routes>
-        <Route exact path="/" element={<Home/>}/>
-        <Route exact path="/student/add" element={<AddStudent/>}/>
+        <Route index element={<Home/>}/>
+        <Route path="/student/add" element={<AddStudent/>}/>
+        <Route path="/student/update/:id" element={<UpdateStudent/>}/>
       </Routes>
   </Router>
   </>

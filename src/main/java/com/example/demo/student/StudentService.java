@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,11 +52,11 @@ public class StudentService {
     }
 
     @Transactional
-    public void updateStudent(Long studentId, String name, String email) {
+    public void updateStudent(Long studentId, String name, String email, LocalDate dob) {
         Student student = studentRepository.findById(studentId)
                                            .orElseThrow(() -> new IllegalStateException("The student with id '" + studentId + "' does not exist."));
 
-        if (name != null && name.length() > 0 && !name.equals(student.getName())) {
+        if (name != null && name.length() > 0) {
             student.setName(name);
         }
 
@@ -66,6 +67,20 @@ public class StudentService {
                 throw new IllegalStateException("The email '" + email + "' is already taken.");
             }
             student.setEmail(email);
+        }
+
+        if (dob != null) {
+            student.setDob(dob);
+        }
+    }
+
+    public Student getStudentById(Long studentId) {
+        Optional<Student> studentOptional = studentRepository.findById(studentId);
+
+        if (studentOptional.isPresent()) {
+            return studentOptional.get();
+        } else {
+            throw new IllegalStateException("The student with id '" + studentId + "' does not exist.");
         }
     }
 }
