@@ -64,7 +64,13 @@ const Nav = () => {
                         <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                     </li>
                     <li className="nav-item active" style={{marginLeft: '10px'}}>
-                        <a className="nav-link" href="/student/add">Add</a>
+                        <a className="nav-link" href="/students/view">View Students</a>
+                    </li>
+                    <li className="nav-item active" style={{marginLeft: '10px'}}>
+                        <a className="nav-link" href="/student/add">Add Student</a>
+                    </li>
+                    <li className="nav-item active" style={{marginLeft: '10px'}}>
+                        <a className="nav-link" href="https://www.alexsandersontech.com" target='_blank'>Contact</a>
                     </li>
                 </ul>
                 <div className="form-inline my-2 my-lg-0">
