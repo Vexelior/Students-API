@@ -51,12 +51,11 @@ public class StudentService {
         studentRepository.deleteById(studentId);
     }
 
-    @Transactional
-    public void updateStudent(Long studentId, String name, String email, LocalDate dob) {
-        Student student = studentRepository.findById(studentId)
-                                           .orElseThrow(() -> new IllegalStateException("The student with id '" + studentId + "' does not exist."));
+    @Transactional // Save the updated student to the database.
+    public Student updateStudent(Long studentId, String name, String email, LocalDate dob) {
+        Student student = getStudentById(studentId);
 
-        if (name != null && name.length() > 0) {
+        if (name != null && name.length() > 0 && !name.equals(student.getName())) {
             student.setName(name);
         }
 
@@ -66,12 +65,17 @@ public class StudentService {
             if (studentOptional.isPresent()) {
                 throw new IllegalStateException("The email '" + email + "' is already taken.");
             }
+
             student.setEmail(email);
         }
 
-        if (dob != null) {
+        if (dob != null && !dob.equals(student.getDob())) {
             student.setDob(dob);
         }
+
+        studentRepository.save(student);
+
+        return student;
     }
 
     public Student getStudentById(Long studentId) {

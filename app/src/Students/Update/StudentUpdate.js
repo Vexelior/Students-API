@@ -47,30 +47,26 @@ const StudentUpdate = () => {
             dob: student.dob
         }
 
-        const response = await fetch(`http://localhost:8080/api/v1/student/${id}`, {
+        console.log(studentToUpdate);
+
+        await fetch(`http://localhost:8080/api/v1/student/${id}?name=${studentToUpdate.name}&email=${studentToUpdate.email}&dob=${studentToUpdate.dob}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(studentToUpdate)
-        });
-
-        console.log(response);
-
-        if (response.ok) {
-            const data = await response.json();
-            console.log(data);
-
-            if (data) {
-                setStudent(data);
-                alert('Student updated successfully!');
-                window.location.href = '/'; // Will redirect to details page later
-            } else {
-                alert('No data found!');
-            }
-        } else {
-            alert('Failed to update student!');
-        }
+            body: JSON.stringify(studentToUpdate),
+        })
+            .then(response => {
+                if (response.ok) {
+                    alert('Student updated successfully!');
+                    window.location.href = '/'; // Redirect to home page, later will redirect to details page.
+                } else {
+                    alert('Failed to update student!');
+                }
+            })
+            .catch(error => {
+                alert('Failed to update student!\n\n' + error);
+            });
     }
 
     return (

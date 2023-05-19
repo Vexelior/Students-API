@@ -24,6 +24,9 @@ const Home = () => {
     students.forEach(student => {
       let date = new Date(student.dob);
       student.dob = date.toLocaleDateString();
+
+      // Order the students by id
+      students.sort((a, b) => (a.id > b.id) ? 1 : -1);
     });
   }
 

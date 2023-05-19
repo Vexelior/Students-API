@@ -34,16 +34,19 @@ public class StudentController {
     public void deleteStudent(@PathVariable("studentId") Long studentId) { studentService.deleteStudent(studentId); }
 
     @PutMapping(path = "{studentId}")
-    public ResponseEntity<Student> updateStudent(@PathVariable("studentId") Long studentId,
-                                                 @RequestParam(required = false) String name,
-                                                 @RequestParam(required = false) String email,
-                                                 @RequestParam(required = false) LocalDate dob) {
+    public ResponseEntity<Student> updateStudent(
+            @PathVariable("studentId") Long studentId,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String email,
+            @RequestParam(required = false) LocalDate dob
+    ) {
         try {
-            studentService.updateStudent(studentId, name, email, dob);
-            return ResponseEntity.ok().build();
+            Student student = studentService.updateStudent(studentId, name, email, dob);
+            return ResponseEntity.ok(student);
         } catch (IllegalStateException e) {
             return ResponseEntity.badRequest().build();
         }
+    
     }
 
 
