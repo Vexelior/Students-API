@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import "./StudentView.css";
 
 const StudentView = () => {
     const [student, setStudent] = useState([]);
     const { id } = useParams()
+    const history = useNavigate();
 
     const getStudentDetails = async () => {
         const response = await fetch(`http://localhost:8080/api/v1/student/${id}`);
@@ -29,28 +30,40 @@ const StudentView = () => {
 
     useEffect(() => {
         getStudentDetails();
-    } , []);
+    }, []);
 
     return (
-        <div className="container">
-            <div className="student-view">
-                <h1 className="mt-3">Student Details</h1>
-                <div className="student-view-container">
-                    <div className="student-view-row">
-                        <label><b>Name</b></label>
-                        <p>{student.name}</p>
-                    </div>
-                    <div className="student-view-row">
-                        <label><b>Email</b></label>
-                        <p>{student.email}</p>
-                    </div>
-                    <div className="student-view-row">
-                        <label><b>Date of Birth</b></label>
-                        <p>{student.dob}</p>
+        <>
+        <div className="container text-center">
+            <div className="row">
+                <div className="col">
+                    <h2>Student Details</h2>
+                    <hr />
+
+                    <div className="col col-md-6 d-inline-block">
+                        <div className="form-group">
+                            <label htmlFor="firstName">First Name</label>
+                            <input type="text" className="form-control" id="firstName" name="firstName" value={student.name} readOnly />
+
+                            <label htmlFor="lastName">Last Name</label>
+                            <input type="text" className="form-control" id="lastName" name="lastName" value={student.email} readOnly />
+
+                            <label htmlFor="dob">Date of Birth</label>
+                            <input type="text" className="form-control" id="dob" name="dob" value={student.dob} readOnly />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div className="button-container text-center">
+            <div className="row">
+                <div className="col">
+                    <a className="btn btn-primary" onClick={() => history('/')}>Back</a>
+                </div>
+            </div>
+        </div>
+        </>
     );
 };
 

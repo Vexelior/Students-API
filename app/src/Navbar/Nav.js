@@ -3,42 +3,50 @@ import './Nav.css';
 
 const Nav = () => {
 
-    // Create a function that searches for a student by name in the table
     const searchStudent = () => {
-        // Get the input value
         let input = document.getElementById('search').value;
-        // Get the table
         let table = document.getElementById('studentTable');
         if (!table)
         {
             return;
         }
-        // Get the table rows
         let tr = table.getElementsByTagName('tr');
-        // Loop through the table rows
+
+        let matches = [];
+        
         for (let i = 0; i < tr.length; i++)
         {
-            // Get the table data
             let td = tr[i].getElementsByTagName('td')[1];
 
-            // If the table data exists
             if (td)
             {
-                // Get the text value of the table data
-                let textValue = td.textContent || td.innerHTML;
-                console.log(textValue);
+                if (td.innerHTML.toLowerCase().indexOf(input.toLowerCase()) > -1 || td.innerText.toLowerCase().indexOf(input.toLowerCase()) > -1)
+                {
+                    matches.push(tr[i]);
+                }
 
-                // If the text value matches the input value
-                if (textValue.toLowerCase().indexOf(input.toLowerCase()) > -1)
-                {
-                    // Display the table row
-                    tr[i].style.display = '';
-                }
-                else
-                {
-                    // Hide the table row
-                    tr[i].style.display = 'none';
-                }
+                // Show only the matched rows
+                if (matches.length > 0) {
+                    let tbody = table.getElementsByTagName('tbody')[0];
+                    if (!tbody) {
+                        return;
+                    }
+                    for (let i = 0; i < tbody.rows.length; i++) {
+                        tbody.rows[i].style.display = 'none';
+                    }
+                    for (let i = 0; i < matches.length; i++) {
+                        matches[i].style.display = '';
+                    }
+                }   
+            }
+        }
+
+        if (matches.length === 0) {
+            alert('No matches found!');
+
+            for (let i = 0; i < tr.length; i++)
+            {
+                tr[i].style.display = '';
             }
         }
     };
