@@ -38,7 +38,7 @@ const Home = () => {
 
   if (students.length === 0) {
     return <div className='container d-flex justify-content-center align-items-center' style={{marginTop: '400px'}}>
-              <p>No students found</p>
+              <p>No students found!</p>
             </div>
   }
 

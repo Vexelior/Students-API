@@ -5,6 +5,7 @@ import Home from './Home/Home';
 import AddStudent from './Students/Add/StudentAdd';
 import UpdateStudent from './Students/Update/StudentUpdate';
 import ViewStudent from './Students/View/StudentView';
+import DeleteStudent from './Students/Delete/StudentDelete';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/student/add" element={<AddStudent/>}/>
         <Route path="/student/update/:id" element={<UpdateStudent/>}/>
         <Route path="/student/view/:id" element={<ViewStudent/>}/>
+        <Route path="/student/delete/:id" element={<DeleteStudent/>}/>
       </Routes>
   </Router>
   </>
