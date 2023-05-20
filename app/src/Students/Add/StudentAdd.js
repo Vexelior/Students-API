@@ -61,9 +61,6 @@ const StudentAdd = () => {
                     <label htmlFor="dob">Date of Birth</label>
                     <input type="date" name='dob' className="form-control" id="dob" />
                 </div>
-                <button className="btn btn-primary" type="button" disabled>
-                    <i className="fa fa-spinner fa-spin"></i>
-                </button>
                 <button type="button" className="btn btn-primary" onClick={handleSubmit}>Submit</button>
                 <a className='btn btn-secondary ml-2' href='/'>Cancel</a>
             </form>
