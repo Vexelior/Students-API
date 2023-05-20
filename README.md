@@ -5,7 +5,7 @@ This is a simple Spring Boot application that demonstrates how to use Spring Boo
 
 ## Technologies
 * Spring Boot 3.0.6
-* Java 20
+* Java 17
 * PostgreSQL 15.3
 * Maven 3.8.3
 
@@ -30,7 +30,7 @@ The app defines following CRUD APIs.
     
 * GET - /api/v1/students/{studentId}
     
-* PUT - /api/v1/students/{studentId}
+* PUT - /api/v1/students/?name={studen.name}&email={student.email}&dob={student.dob}
     
 * DELETE - /api/v1/students/{studentId}
 
