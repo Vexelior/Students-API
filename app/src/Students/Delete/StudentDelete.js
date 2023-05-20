@@ -30,7 +30,7 @@ const StudentDelete = () => {
 
     useEffect(() => {
         getStudentInfo();
-    }, []);
+    });
 
 
     const deleteStudent = () => {

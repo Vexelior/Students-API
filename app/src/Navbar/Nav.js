@@ -85,7 +85,7 @@ const Nav = () => {
                         <a className="nav-link" href="/student/add">Add Student</a>
                     </li>
                     <li className="nav-item active" style={{ marginLeft: '10px' }}>
-                        <a className="nav-link" href="https://www.alexsandersontech.com" target='_blank'>Contact</a>
+                        <a className="nav-link" href="https://www.alexsandersontech.com" target='_blank' rel='noreferrer'>Contact</a>
                     </li>
                 </ul>
                 <div className="form-inline my-2 my-lg-0">
