@@ -54,6 +54,11 @@ const StudentDelete = () => {
             .catch(error => console.log(error));
     };
 
+    // Format the dob to mm-dd-yyyy
+    const dob = new Date(student.dob);
+    const formattedDob = dob.toLocaleDateString('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' });
+    student.dob = formattedDob;
+
 
     return (
         <div className="container d-flex justify-content-center">
@@ -82,6 +87,9 @@ const StudentDelete = () => {
                             </div>
                             <button type="submit" className="btn btn-danger" onClick={handleSubmit}>
                                 Delete
+                            </button>
+                            <button type="button" className="btn btn-secondary ml-2" onClick={() => window.location.href = '/students/view'}>
+                                Cancel
                             </button>
                         </form>
                     </div>

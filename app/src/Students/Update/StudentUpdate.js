@@ -90,7 +90,7 @@ const StudentUpdate = () => {
                     </div>
 
                     <button className="btn btn-primary" onClick={handleSubmit}>Update</button>
-                    <a href="/" className="btn btn-danger ml-2">Cancel</a> {/* Will redirect to details page later */}
+                    <a href="/students/view" className="btn btn-secondary ml-2">Cancel</a> {/* Will redirect to details page later */}
                 </form>
             </div>
         </div>

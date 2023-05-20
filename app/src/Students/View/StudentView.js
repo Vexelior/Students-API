@@ -59,7 +59,7 @@ const StudentView = () => {
         <div className="button-container text-center">
             <div className="row">
                 <div className="col">
-                    <a className="btn btn-primary" onClick={() => history('/')}>Back</a>
+                    <a className="btn btn-primary" onClick={() => history('/students/view')}>Back</a>
                 </div>
             </div>
         </div>

@@ -5,6 +5,27 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+window.addEventListener('scroll', handleScroll);
+
+function handleScroll() {
+  const navbar = document.querySelector('.navbar');
+  const scrollPosition = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const navbarHeight = navbar.offsetHeight;
+  const threshold = windowHeight / 8.5;
+
+  if (scrollPosition > threshold) {
+    navbar.style.position = 'fixed';
+    navbar.style.top = '0';
+    navbar.style.opacity = '0.8';
+    navbar.style.width = '100%';
+  } else {
+    navbar.style.position = 'static';
+    navbar.style.opacity = '1';
+  }
+}
+
 root.render(
   <React.StrictMode>
     <App />
