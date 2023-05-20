@@ -1,0 +1,4 @@
+/* change color of anchor tag on hover */
+.navbar-nav li a:hover {
+  color: #bebebe !important;
+}

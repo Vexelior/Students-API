@@ -45,7 +45,7 @@ const StudentDelete = () => {
             .then(response => {
                 if (response.ok) {
                     alert('Student deleted successfully!');
-                    window.location.href = '/';
+                    window.location.href = '/students/view';
                 }
                 else {
                     alert('Error deleting student!');

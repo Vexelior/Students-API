@@ -50,20 +50,24 @@ const StudentAdd = () => {
             <h2 className='text-center mt-4'>Add Student</h2>
             <form>
                 <div className="form-group">
-                    <label htmlFor="name">Name:</label>
+                    <label htmlFor="name">Name</label>
                     <input type="text" name='name' className="form-control" id="name" />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="email">Email:</label>
+                    <label htmlFor="email">Email</label>
                     <input type="email" name='email' className="form-control" id="email" />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="dob">Date of Birth:</label>
+                    <label htmlFor="dob">Date of Birth</label>
                     <input type="date" name='dob' className="form-control" id="dob" />
                 </div>
+                <button className="btn btn-primary" type="button" disabled>
+                    <i className="fa fa-spinner fa-spin"></i>
+                </button>
                 <button type="button" className="btn btn-primary" onClick={handleSubmit}>Submit</button>
+                <a className='btn btn-secondary ml-2' href='/'>Cancel</a>
             </form>
-        </div>
+        </div >
     );
 }
 
