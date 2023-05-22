@@ -12,7 +12,6 @@ function handleScroll() {
   const navbar = document.querySelector('.navbar');
   const scrollPosition = window.scrollY;
   const windowHeight = window.innerHeight;
-  const navbarHeight = navbar.offsetHeight;
   const threshold = windowHeight / 8.5;
 
   if (scrollPosition > threshold) {

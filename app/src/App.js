@@ -1,17 +1,15 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Nav from './Navbar/Nav';
-import Home from './Home/Home';
-import TableStudent from './Students/Table/StudentsTable'
-import AddStudent from './Students/Add/StudentAdd';
-import UpdateStudent from './Students/Update/StudentUpdate';
-import ViewStudent from './Students/View/StudentView';
-import DeleteStudent from './Students/Delete/StudentDelete';
+import Home from './components/Home/Home';
+import TableStudent from './components/Students/Table/StudentsTable'
+import AddStudent from './components/Students/Add/StudentAdd';
+import UpdateStudent from './components/Students/Update/StudentUpdate';
+import ViewStudent from './components/Students/View/StudentView';
+import DeleteStudent from './components/Students/Delete/StudentDelete';
 
 const App = () => {
   return (
     <>
-    <Nav/>
     <Router>
       <Routes>
         <Route index element={<Home/>}/>
@@ -21,7 +19,7 @@ const App = () => {
         <Route path="/student/delete/:id" element={<DeleteStudent/>}/>
         <Route path="/students/view" element={<TableStudent/>}/>
       </Routes>
-  </Router>
+    </Router>
   </>
   );
 }

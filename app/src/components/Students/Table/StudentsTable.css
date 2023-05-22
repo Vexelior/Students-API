@@ -1,6 +1,7 @@
 .students-table {
     margin: 0 auto;
     width: 80%;
+    margin-bottom: 40px;
 }
 
 #crudButton {

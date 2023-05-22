@@ -1,4 +1,5 @@
 import React from 'react'
+import Layout from '../../Layout/Layout';
 import "./StudentAdd.css";
 
 const StudentAdd = () => {
@@ -46,6 +47,7 @@ const StudentAdd = () => {
     }
 
     return (
+        <Layout>
         <div className="container">
             <h2 className='text-center mt-4'>Add Student</h2>
             <form>
@@ -65,6 +67,7 @@ const StudentAdd = () => {
                 <a className='btn btn-secondary ml-2' href='/'>Cancel</a>
             </form>
         </div >
+        </Layout>
     );
 }
 

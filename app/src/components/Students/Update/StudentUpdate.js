@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
+import Layout from '../../Layout/Layout';
 import './StudentUpdate.css';
 
 const StudentUpdate = () => {
@@ -70,30 +71,34 @@ const StudentUpdate = () => {
     }
 
     return (
-        <div className="container">
-            <div className="student-update">
-                <h1>Update</h1>
-                <form>
-                    <div className="form-group">
-                        <label htmlFor="name">Name:</label>
-                        <input type="text" className="form-control" value={student.name || ''} onChange={handleChange} name="name" />
-                    </div>
+        <>
+            <Layout>
+                <div className="container">
+                    <div className="student-update">
+                        <h1>Update</h1>
+                        <form>
+                            <div className="form-group">
+                                <label htmlFor="name">Name:</label>
+                                <input type="text" className="form-control" value={student.name || ''} onChange={handleChange} name="name" />
+                            </div>
 
-                    <div className="form-group">
-                        <label htmlFor="email">Email:</label>
-                        <input type="email" className="form-control" value={student.email || ''} onChange={handleChange} name="email" />
-                    </div>
+                            <div className="form-group">
+                                <label htmlFor="email">Email:</label>
+                                <input type="email" className="form-control" value={student.email || ''} onChange={handleChange} name="email" />
+                            </div>
 
-                    <div className="form-group">
-                        <label htmlFor="phone">Date of Birth:</label>
-                        <input type="date" className="form-control" value={student.dob || ''} onChange={handleChange} name="dob" />
-                    </div>
+                            <div className="form-group">
+                                <label htmlFor="phone">Date of Birth:</label>
+                                <input type="date" className="form-control" value={student.dob || ''} onChange={handleChange} name="dob" />
+                            </div>
 
-                    <button className="btn btn-primary" onClick={handleSubmit}>Update</button>
-                    <a href="/students/view" className="btn btn-secondary ml-2">Cancel</a> {/* Will redirect to details page later */}
-                </form>
-            </div>
-        </div>
+                            <button className="btn btn-primary" onClick={handleSubmit}>Update</button>
+                            <a href="/students/view" className="btn btn-secondary ml-2">Cancel</a> {/* Will redirect to details page later */}
+                        </form>
+                    </div>
+                </div>
+            </Layout>
+        </>
     );
 }
 

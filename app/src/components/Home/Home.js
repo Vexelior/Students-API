@@ -1,11 +1,12 @@
 import React from 'react';
 import './Home.css';
-import Footer from '../Footer/Footer';
-import StudentImage from '../assets/images/slideshow/students-image.jpg';
+import StudentImage from '../../assets/images/students-image.jpg';
+import Layout from '../Layout/Layout';
 
 const Home = () => {
   return (
     <>
+    <Layout>
       <div className="App">
         <div className='container'>
           <div className='row'>
@@ -24,8 +25,7 @@ const Home = () => {
           <img src={StudentImage} alt='students' className='img-fluid' />
         </div>
       </div>
-
-      <Footer />
+      </Layout>
     </>
   );
 }

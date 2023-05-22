@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Layout from '../../Layout/Layout';
 import "./StudentDelete.css";
 
 const StudentDelete = () => {
@@ -61,6 +62,7 @@ const StudentDelete = () => {
 
 
     return (
+        <Layout>
         <div className="container d-flex justify-content-center">
             <div className='delete-container'>
                 <div className='row'>
@@ -96,6 +98,7 @@ const StudentDelete = () => {
                 </div>
             </div>
         </div>
+        </Layout>
     );
 };
 
