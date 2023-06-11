@@ -1,4 +1,4 @@
-import { React, Outlet } from 'react';
+import { React } from 'react';
 import Navbar from '../../components/Navbar/Nav'
 import Footer from '../../components/Footer/Footer';
 import './Layout.css';

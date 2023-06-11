@@ -10,18 +10,21 @@ window.addEventListener('scroll', handleScroll);
 
 function handleScroll() {
   const navbar = document.querySelector('.navbar');
+  const navbarHeight = navbar.offsetHeight;
   const scrollPosition = window.scrollY;
-  const windowHeight = window.innerHeight;
-  const threshold = windowHeight / 8.5;
 
-  if (scrollPosition > threshold) {
+  if (scrollPosition > navbarHeight) {
     navbar.style.position = 'fixed';
     navbar.style.top = '0';
     navbar.style.opacity = '0.8';
     navbar.style.width = '100%';
+    navbar.style.zIndex = '1';
+    navbar.classList.add('navbar-drop');
+
   } else {
     navbar.style.position = 'static';
     navbar.style.opacity = '1';
+    navbar.classList.remove('navbar-drop');
   }
 }
 
