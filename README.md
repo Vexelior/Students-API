@@ -37,23 +37,28 @@ The app defines following CRUD APIs.
 You can test them using postman or any other rest client.
 
 ## Screenshots
-Home Page
+Home Page  
+
 ![Home-Page](./readme-assets/student-api-home.png)
 
-List of Students
+List of Students  
+
 ![List-of-Students](./readme-assets/student-api-list.png)
 
-Add Student
+Add Student  
+
 ![Add-Student](./readme-assets/student-api-add.png)
 
-Update Student
+Update Student  
+
 ![Update-Student](./readme-assets/student-api-edit.png)
 
 View Student  
 
 ![View-Student](./readme-assets/student-api-details.png)
 
-Delete Student
+Delete Student  
+
 ![Delete-Student](./readme-assets/student-api-delete.png)
 
 ## Contributors
