@@ -49,7 +49,8 @@ Add Student
 Update Student
 ![Update-Student](./readme-assets/student-api-edit.png)
 
-View Student
+View Student  
+
 ![View-Student](./readme-assets/student-api-details.png)
 
 Delete Student
